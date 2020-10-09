@@ -47,6 +47,28 @@ a:hover {
         display: inline;
 }
 
+.card-body {
+        border-left: solid 2px white;
+}
+
+.card-text {
+        text-align: justify;
+}
+
+/* input[type="text"] {
+        text-align: center;
+        height: 60px;
+        top: 10px;
+        border: none;
+        background: transparent;
+        font-size: 20px;
+        font-weight: 200;
+        width: 313px;
+} */
+
+.submission-form {
+        display: none;
+}
 
 @media (min-width: 768px) {
         .login-div {
