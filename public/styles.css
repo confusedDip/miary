@@ -1,0 +1,66 @@
+html,
+body {
+        height: 100%;
+}
+
+body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #2d4059;
+        color: white;
+}
+
+.jumbotron {
+        background-color: #2d4059;
+        color: white;
+}
+
+.intro-div {
+        padding: 5%;
+        text-align: center;
+}
+
+.login-div {
+        padding: 5% 10%;
+        text-align: center;
+        border-top: 1px groove aliceblue;
+}
+
+
+a:hover {
+        text-decoration: none;
+}
+
+.form-signin .form-control:focus {
+        z-index: 2;
+}
+
+.copyright1 {
+        display: none;
+}
+
+.copyright2 {
+        display: inline;
+}
+
+
+@media (min-width: 768px) {
+        .login-div {
+                padding: 5% 10%;
+                text-align: center;
+                border-left: 1px groove aliceblue;
+                border-top: 0px;
+        }
+
+        .copyright1 {
+                display: inline;
+        }
+
+        .copyright2 {
+                display: none;
+        }
+}

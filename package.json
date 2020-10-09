@@ -1,0 +1,18 @@
+{
+  "name": "miary",
+  "version": "1.0.0",
+  "description": "Miary is a beautiful diary and journal web application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Souradip Nath",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.8"
+  }
+}
