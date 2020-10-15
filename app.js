@@ -46,7 +46,9 @@ app.get("/", function (req, res) {
 });
 
 app.get("/login", function (req, res) {
-        res.redirect("/");
+        res.render("home", {
+                loginStatus: "You've successfully logged out",
+        });
 });
 
 app.get("/signup", function (req, res) {
@@ -88,7 +90,7 @@ app.post("/signup", function (req, res) {
 
                                         newUser.save();
                                         var signupStatus =
-                                                "Successfully Registered New User<br> <strong><a href='/login'>Login to your account</a></strong>";
+                                                "Successfully Registered New User<br> <strong><a href='/'>Login to your account</a></strong>";
                                         res.render("signup", {
                                                 signupStatus: signupStatus,
                                         });
@@ -113,7 +115,7 @@ app.post("/", function (req, res) {
                                         var postStatus = "";
                                         var today = new Date().toString().split(" ").splice(1, 3).join(" ");
                                         if (user.posts.length === 0) {
-                                                var message = "Excited to submit your first entry? Click <a href='#'>here.</a>";
+                                                var message = "Excited to submit your first entry? Click <a class='form' href='#'>here.</a>";
                                                 res.render("dashboard", {
                                                         user: user,
                                                         postStatus: message,
@@ -125,7 +127,7 @@ app.post("/", function (req, res) {
                                                 user.posts.forEach(function (post) {
                                                         var num_of_posts = user.posts.length;
                                                         if (user.posts[num_of_posts-1].date === today) {
-                                                                postStatus = "You have already written for today!";
+                                                                postStatus = "You have already written for today! Make sure to visit us tomorrow. Click <a href='/login'>here</a> to logout";
                                                                 res.render("dashboard", {
                                                                         user: user,
                                                                         postStatus: postStatus,
@@ -133,7 +135,7 @@ app.post("/", function (req, res) {
                                                                         message: "Here are your memories"
                                                                 });
                                                         }else{
-                                                                postStatus = "How is your day going? Click <a href='#'>here</a> to submit today's entry";
+                                                                postStatus = "How is your day going? Click <a class = 'form' href='#'>here</a> to submit today's entry";
                                                                 res.render("dashboard", {
                                                                         user: user,
                                                                         postStatus: postStatus,
