@@ -103,7 +103,7 @@ app.post("/", function (req, res) {
                                         var postStatus = "";
                                         var today = new Date().toString().split(" ").splice(1, 3).join(" ");
                                         if (user.posts.length === 0) {
-                                                var message = "Excited to submit your first entry? Click <a class='form' href='#'>here.</a>";
+                                                var message = "Excited to submit your first entry? Click <a class='form' href='#'>here</a>.";
                                                 res.render("dashboard", {
                                                         user: user,
                                                         postStatus: message,
@@ -115,7 +115,7 @@ app.post("/", function (req, res) {
                                                 user.posts.forEach(function (post) {
                                                         var num_of_posts = user.posts.length;
                                                         if (user.posts[num_of_posts-1].date === today) {
-                                                                postStatus = "You have already written for today! Make sure to visit us tomorrow. Click <a href='/login'>here</a> to logout";
+                                                                postStatus = "You have already written for today! Make sure to visit us tomorrow.";
                                                                 res.render("dashboard", {
                                                                         user: user,
                                                                         postStatus: postStatus,
@@ -123,7 +123,7 @@ app.post("/", function (req, res) {
                                                                         message: "Here are your memories"
                                                                 });
                                                         }else{
-                                                                postStatus = "How is your day going? Click <a class = 'form' href='#'>here</a> to submit today's entry";
+                                                                postStatus = "How is your day going? Click <a class = 'form' href='#'>here</a> to submit today's entry.";
                                                                 res.render("dashboard", {
                                                                         user: user,
                                                                         postStatus: postStatus,
