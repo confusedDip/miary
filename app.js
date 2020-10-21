@@ -4,33 +4,21 @@ const ejs = require("ejs");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
+
+const Post = require('./models/Post');
+const User = require('./models/User');
+
 mongoose.connect("mongodb://localhost:27017/miaryDB", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
 });
 
-const postSchema = new mongoose.Schema({
-        title: String,
-        date: String,
-        content: String,
-});
-const Post = new mongoose.model("Post", postSchema);
 const newPost = new Post({
         title: "Title Goes Here",
         date: new Date().toString().split(" ").splice(1, 3).join(" "),
         content: "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.",
 });
 newPost.save();
-
-
-const userSchema = new mongoose.Schema({
-        fname: String,
-        lname: String,
-        username: String,
-        password: String,
-        posts: [postSchema],
-});
-const User = new mongoose.model("User", userSchema);
 
 const app = express();
 app.use(bodyParser.urlencoded({
