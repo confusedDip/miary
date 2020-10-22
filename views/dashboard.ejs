@@ -19,7 +19,17 @@
                 <div class="row">
                         <div class="col-12">
                                 <h1 class="mb-2 mt-5">Welcome, <%= user.fname %> </h1>
-                                <p class="mb-3"><%- postStatus %> </p>
+                                <div>
+                                        <div style="float: left">
+                                                <p class="mb-3">
+                                                        <%- postStatus %>
+                                                </p>
+                                        </div>
+                                        <div style="float: right;">
+                                                <a href='/login'>Logout</a>
+                                        </div> 
+                                </div>
+                                <br>
                                 <hr>
                         </div>
                 </div>
